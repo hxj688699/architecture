@@ -13,7 +13,6 @@ import com.feinno.architecture.goodsmgr.service.GoodsService;
 import com.feinno.architecture.goodsmgr.vo.GoodsModel;
 import com.feinno.architecture.goodsmgr.vo.GoodsQueryModel;
 import com.feinno.architecture.pageutil.Page;
-import com.feinno.architecture.util.format.DateFormatUtil;
 import com.feinno.architecture.util.json.JsonHelper;
 
 @Controller
