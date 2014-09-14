@@ -1,5 +1,11 @@
 package com.feinno.architecture.customermgr.web;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.config.IniSecurityManagerFactory;
+import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.Factory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,11 +30,24 @@ public class CustomerController {
 	
 	@RequestMapping(value="toAdd", method=RequestMethod.GET)
 	public String toAdd(){
+		System.out.println("Hello World!");
+		Factory<SecurityManager> factory = new IniSecurityManagerFactory("classpath:shiro.ini");
+		SecurityManager sm = factory.getInstance();
+		SecurityUtils.setSecurityManager(sm);
+		UsernamePasswordToken token = new UsernamePasswordToken("hxj", "hxj123!");		
+		token.setRememberMe(true);
+		Subject currentUser = SecurityUtils.getSubject();
+		currentUser.login(token);
+		String sessionId = (String) currentUser.getSession().getId();
+		System.out.println(sessionId);
+		System.out.println("currentUser.isAuthenticated: "+currentUser.isAuthenticated());
+		System.out.println(currentUser.isPermitted("r12"));
 		return "customer/add";
 	}
 	
 	@RequestMapping(value="add", method=RequestMethod.POST)
 	public String add(@ModelAttribute("cm") CustomerModel cm){
+		System.out.println("currentUser.isAuthenticated: "+SecurityUtils.getSubject().isAuthenticated());
 		cm.setRegisterTime(DateFormatUtil.long2string(System.currentTimeMillis()));
 		customerService.create(cm);
 		return "customer/success";

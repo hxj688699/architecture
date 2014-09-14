@@ -6,8 +6,11 @@ import java.util.List;
 
 public class Page<E> implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1251488034370687175L;
 	private int pageSize = 10;
-	private int totalPage;
 	private int totalCount;
 	private int start;
 	private int nowPage;
@@ -21,9 +24,6 @@ public class Page<E> implements Serializable {
 	}
 	public int getTotalPage() {
 		return (int)Math.ceil(totalCount * 1.0 / pageSize);
-	}
-	public void setTotalPage(int totalPage) {
-		this.totalPage = totalPage;
 	}
 	public int getTotalCount() {
 		return totalCount;

@@ -1,8 +1,14 @@
 package com.feinno.architecture.goodsmgr;
 
+import java.util.Map;
+
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
+
+import org.apache.commons.beanutils.BeanMap;
+
+import com.feinno.architecture.goodsmgr.vo.GoodsModel;
 
 /**
  * Unit test for simple App.
@@ -35,4 +41,13 @@ public class AppTest
     {
         assertTrue( true );
     }
+    public static void main(String[] args) {
+		GoodsModel m = new GoodsModel();
+		m.setUuid(10);
+		m.setName("name");
+		m.setDescription("test");
+		m.setImgPath("d:/");
+		
+		Map map = new BeanMap(m);
+	}
 }
