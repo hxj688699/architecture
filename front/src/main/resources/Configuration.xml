@@ -4,6 +4,16 @@
 	<typeAliases>
 		<typeAlias type="com.feinno.architecture.customermgr.vo.CustomerModel" alias="CM"/>
 		<typeAlias type="com.feinno.architecture.customermgr.vo.CustomerQueryModel" alias="CQM"/>
+		<typeAlias type="com.feinno.architecture.goodsmgr.vo.GoodsModel" alias="GM"/>
+		<typeAlias type="com.feinno.architecture.goodsmgr.vo.GoodsQueryModel" alias="GQM"/>
+		<typeAlias type="com.feinno.architecture.cartmgr.vo.CartModel" alias="CartM"/>
+		<typeAlias type="com.feinno.architecture.cartmgr.vo.CartQueryModel" alias="CartQM"/>
+		<typeAlias type="com.feinno.architecture.ordermgr.vo.OrderModel" alias="OM"/>
+		<typeAlias type="com.feinno.architecture.ordermgr.vo.OrderQueryModel" alias="OQM"/>
+		<typeAlias type="com.feinno.architecture.ordermgr.vo.OrderDetailModel" alias="ODM"/>
+		<typeAlias type="com.feinno.architecture.ordermgr.vo.OrderDetailQueryModel" alias="ODQM"/>
+		<typeAlias type="com.feinno.architecture.storemgr.vo.StoreModel" alias="StoreM"/>
+		<typeAlias type="com.feinno.architecture.storemgr.vo.StoreQueryModel" alias="StoreQM"/>
 	</typeAliases>
 	<plugins>
 		<plugin interceptor="com.feinno.architecture.pageutil.PagePlugin">

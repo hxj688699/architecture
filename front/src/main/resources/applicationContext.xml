@@ -32,7 +32,7 @@
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"/>
 		<property name="configLocation" value="classpath:Configuration.xml"/>
-		<property name="mapperLocations" value="classpath*:com/feinno/architecture/**/*Mapper.xml"/>
+		<property name="mapperLocations" value="classpath*:mapper/*Mapper.xml"/>
 	</bean>
 	<!-- 根据扫描注解选择mapper实现DAO -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
