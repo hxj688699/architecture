@@ -6,4 +6,10 @@ import com.feinno.architecture.customermgr.vo.CustomerQueryModel;
 
 public interface CustomerService extends IBaseService<CustomerModel, CustomerQueryModel> {
 
+	/**
+	 * 根据custometId获取CustomerModel
+	 * @param custometId
+	 * @return
+	 */
+	public CustomerModel getByCustomerId(String custometId);
 }

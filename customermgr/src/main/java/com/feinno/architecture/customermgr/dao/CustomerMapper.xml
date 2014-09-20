@@ -20,6 +20,10 @@
 		select * from customer where uuid=#{uuid}
 	</select>
 	
+	<select id="getByCustomerId" parameterType="String" resultType="CM">
+		select * from customer where customerId=#{custometId}
+	</select>
+	
 	<select id="queryByPage" parameterType="CQM" resultType="CM">
 		select * from customer
 		<where>
