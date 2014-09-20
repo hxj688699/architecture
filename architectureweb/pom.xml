@@ -43,6 +43,12 @@
 			<version>0.0.1-SNAPSHOT</version>
 			<type>war</type>
 		</dependency>
+		<dependency>
+			<groupId>com.feinno</groupId>
+			<artifactId>front</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>architectureweb</finalName>
@@ -72,6 +78,10 @@
 						<overlay>
 							<groupId>com.feinno</groupId>
 							<artifactId>storemgr</artifactId>
+						</overlay>
+						<overlay>
+							<groupId>com.feinno</groupId>
+							<artifactId>front</artifactId>
 						</overlay>
 					</overlays>
 				</configuration>
