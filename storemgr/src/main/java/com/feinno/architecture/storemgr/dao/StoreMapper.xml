@@ -10,6 +10,10 @@
      	update store set goodsUuid=#{goodsUuid},storeNum=#{storeNum}
      	   	where uuid=#{uuid}
      </update>
+     <update id="updateByGoodsId" parameterType="StoreM">
+     	update store set storeNum=storeNum - #{storeNum}
+     	   	where goodsUuid=#{goodsUuid}
+     </update>
      <delete id="delete" parameterType="int">
      	delete from store where uuid=#{uuid}
      </delete>

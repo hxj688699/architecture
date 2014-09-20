@@ -20,5 +20,9 @@ public class StoreServiceImpl extends BaseService<StoreModel,StoreQueryModel> im
 		this.dao = dao;
 		super.setDAO(dao);
 	}
+	@Override
+	public int updateByGoodsId(StoreModel sm) {
+		return dao.updateByGoodsId(sm);
+	}
 	
 }
