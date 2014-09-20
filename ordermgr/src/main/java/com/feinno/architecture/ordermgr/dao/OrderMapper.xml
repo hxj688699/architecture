@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
 <mapper namespace="com.feinno.architecture.ordermgr.dao.OrderDAO">  
-     <insert id="create" parameterType="OM">
+     <insert id="create" parameterType="OM" useGeneratedKeys="true" keyProperty="uuid">
      	insert into tb_order (customerUuid,orderTime,totalMoney,saveMoney,state) 
      	 values(#{customerUuid},#{orderTime},#{totalMoney},#{saveMoney},#{state})
      </insert>
