@@ -23,6 +23,9 @@
         	<if test="uuid!=null &amp;&amp; uuid > 0">
         		and uuid=#{uuid}
         	</if>  
+        	<if test="customerUuid!=null &amp;&amp; customerUuid > 0">
+        		and customerUuid=#{customerUuid}
+        	</if>  
         	
         </where>
     </select> 
